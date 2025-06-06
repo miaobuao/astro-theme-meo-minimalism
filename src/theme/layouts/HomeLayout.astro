@@ -8,19 +8,22 @@ import ScrollArea from '../components/ScrollArea.astro'
 import config from '../consts'
 import { getSafePostsInfo } from '../utils/post'
 import { getLanguageCode } from '../utils/utils'
-import '../styles/global.scss'
 
 const posts = await getSafePostsInfo(getCollection('blog'))
 ---
 
 <!doctype html>
-<html lang={getLanguageCode()}>
+<html lang={getLanguageCode()} transition:animate="none">
 	<head>
 		<BaseHead title={config.site.title} description={config.site.description} />
 	</head>
 	<body class="flex flex-col h-screen">
-		<Header />
-		<ScrollArea class="flex flex-1 w-full">
+		<Header transition:name="site-header" />
+		<ScrollArea
+			class="flex flex-1 w-full"
+			transition:name="site-body"
+			transition:animate="slide"
+		>
 			<ScrollArea
 				class="md:flex hidden basis-1/4 max-w-80 h-full p-1 md:p-2 flex-col gap-4"
 			>
