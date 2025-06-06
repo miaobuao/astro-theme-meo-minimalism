@@ -10,7 +10,6 @@ import Header from '../components/Header.astro'
 import LicenseCard from '../components/LicenseCard.astro'
 import ScrollArea from '../components/ScrollArea.astro'
 import { getLanguageCode } from '../utils/utils'
-import '../styles/global.scss'
 import '../styles/post.scss'
 import AuthorInfoCard from '../components/AuthorInfo/AuthorInfoCard.astro'
 import TagPercentage from '../components/AuthorInfo/TagPercentage.astro'
@@ -42,13 +41,17 @@ const hasHeadings = headings && headings.length > 0
 	})
 </script>
 
-<html lang={getLanguageCode()}>
+<html lang={getLanguageCode()} transition:animate="none">
 	<head>
 		<BaseHead title={title} description={description} />
 	</head>
 	<body class="flex flex-col h-screen">
-		<Header />
-		<ScrollArea class="flex-1 flex w-full">
+		<Header transition:name="site-header" transition:persist />
+		<ScrollArea
+			class="flex-1 flex w-full"
+			transition:name="site-body"
+			transition:animate="slide"
+		>
 			{
 				hasHeadings ? (
 					<>
