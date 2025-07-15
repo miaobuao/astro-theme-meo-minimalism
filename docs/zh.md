@@ -7,7 +7,7 @@
 ### 安装依赖
 
 ```sh
-pnpm add https://github.com/miaobuao/astro-theme.git
+pnpm add https://github.com/miaobuao/astro-theme-meo-minimalism.git
 ```
 
 ### 配置 astro
@@ -16,7 +16,7 @@ pnpm add https://github.com/miaobuao/astro-theme.git
 
 ```ts
 // astro.config.mjs
-import theme from 'astro-theme-meo'
+import theme from 'astro-theme-meo-minimalism'
 import { defineConfig } from 'astro/config'
 
 export default defineConfig({
@@ -53,11 +53,11 @@ export default defineConfig({
 
 ```mdx
 ---
-layout: 'astro-theme-meo/layouts/HomeLayout.astro'
+layout: 'astro-theme-meo-minimalism/layouts/HomeLayout.astro'
 ---
 
-import 'astro-theme-meo/styles/post.scss'
-import Footer from 'astro-theme-meo/components/Footer.astro'
+import 'astro-theme-meo-minimalism/styles/post.scss'
+import Footer from 'astro-theme-meo-minimalism/components/Footer.astro'
 
 <main class="flex justify-center items-center">
 <article class="prose dark:prose-invert p-4">
